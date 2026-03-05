@@ -4,6 +4,7 @@ import { LoginComponent } from './features/login/login';
 import { StudentsComponent } from './features/students/students';
 import { ForbiddenComponent } from './features/forbidden/forbidden';
 import { Error404Component } from './features/error404/error404';
+import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
     {
@@ -17,6 +18,7 @@ export const routes: Routes = [
     {
         path: 'students',
         component: StudentsComponent,
+        canActivate: [authGuard], // Protegida por el guard
     },
     {
         path: 'forbidden',

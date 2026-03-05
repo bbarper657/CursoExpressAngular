@@ -4,9 +4,10 @@
     </div>
     <nav class="navigation">
         <ul class="nav-links">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/students">Alumnos</a></li>
+            <li><a routerLink="/">Inicio</a></li>
+            <li *ngIf="isLoggedIn"><a routerLink="/students">Alumnos</a></li>
+            <li><a routerLink="/login">Login</a></li>
+            <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
         </ul>
-        <button class="menu-toggle" aria-label="Open Menu">&#9776;</button>
     </nav>
 </header>
